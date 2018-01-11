@@ -1,6 +1,7 @@
 require_relative 'field_object'
 
 class Portal < FieldObject
+    attr_reader :portal
 
     def initialize(alliance)
         super(alliance)
@@ -11,5 +12,6 @@ class Portal < FieldObject
     end
 
     def tick
+        
     end
 end

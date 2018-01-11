@@ -7,6 +7,8 @@ class Switch < FieldObject
         super(alliance)
 
         @owned_by_alliance = false
+        @alliance_blocks = 0
+        @non_alliance_blocks = 0
     end
 
     def add_block(alliance)

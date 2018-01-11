@@ -9,4 +9,8 @@ class PortalTile < Tile
 
         @portal = Portal.new(alliance)
     end
+
+    def tick
+        portal.tick
+    end
 end

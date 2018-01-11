@@ -9,4 +9,8 @@ class ExchangeTile < Tile
 
         @exchange = Exchange.new(alliance)
     end
+
+    def tick
+        exchange.tick
+    end
 end

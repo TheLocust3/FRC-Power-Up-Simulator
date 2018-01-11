@@ -1,8 +1,9 @@
 require_relative 'robot'
 require_relative 'alliance'
 require_relative 'map'
+require_relative 'tickable'
 
-class Game
+class Game < Tickable
 
     def initialize(blue_ai, red_ai)
         initialize_alliances(blue_ai, red_ai)
@@ -23,5 +24,9 @@ class Game
 
         @blue_alliance = Alliance.new('BLUE', blue_robots)
         @red_alliance = Alliance.new('RED', red_robots)
+    end
+
+    def tick
+        @map.tick
     end
 end

@@ -9,4 +9,8 @@ class SwitchTile < Tile
 
         @switch = Switch.new(alliance)
     end
+
+    def tick
+        switch.tick
+    end
 end

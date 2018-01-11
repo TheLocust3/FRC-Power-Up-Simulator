@@ -9,4 +9,8 @@ class ScaleTile < Tile
 
         @scale = Scale.new
     end
+
+    def tick
+        scale.tick
+    end
 end

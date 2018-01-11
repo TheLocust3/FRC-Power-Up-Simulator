@@ -8,6 +8,8 @@ class Scale < FieldObject
 
         @owned_by_blue = false
         @owned_by_red = false
+        @blue_alliance_blocks = 0
+        @red_alliance_blocks = 0
     end
 
     def add_block(alliance)

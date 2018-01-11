@@ -1,4 +1,6 @@
-class Tile
+require_relative '../tickable'
+
+class Tile < Tickable
     attr_reader :length
 
     def initialize(length)
@@ -7,5 +9,9 @@ class Tile
 
     def compute_crossing_time(speed)
         length / speed
+    end
+
+    def tick
+        
     end
 end
