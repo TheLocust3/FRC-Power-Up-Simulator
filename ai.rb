@@ -1,7 +1,8 @@
 class AI
+    attr_reader :robot
 
     def initialize
-
+        @robot = nil
     end
 
     def attach_robot(robot)
@@ -9,6 +10,6 @@ class AI
     end
 
     def take_turn
-
+        
     end
 end

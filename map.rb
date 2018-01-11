@@ -28,12 +28,22 @@ class Map < Tickable
     end
 
     def tick
-        for row in @tiles
+        for row in tiles
             for tile in row
                 unless tile.nil?
                     tile.tick
                 end
             end
+        end
+
+        for robot in @blue_alliance.robots
+            robot.tick
+            robot.tile = tiles[robot.current_y][robot.current_x]
+        end
+
+        for robot in @red_alliance.robots
+            robot.tick
+            robot.tile = tiles[robot.current_y][robot.current_x]
         end
     end
 end

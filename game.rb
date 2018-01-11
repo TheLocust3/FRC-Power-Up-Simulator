@@ -13,12 +13,12 @@ class Game
     def initialize_alliances(blue_ai, red_ai)
         blue_robots = []
         for ai in blue_ai
-            blue_robots << Robot.new(ai, 10)
+            blue_robots << Robot.new(ai, 10, 0, 0) # TODO: assign position better
         end
 
         red_robots = []
         for ai in red_ai
-            red_robots << Robot.new(ai, 10)
+            red_robots << Robot.new(ai, 10, 0, 0)
         end
 
         @blue_alliance = Alliance.new('BLUE', blue_robots)
