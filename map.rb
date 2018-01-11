@@ -20,9 +20,9 @@ class Map < Tickable
 
         @tiles << [PortalTile.new(@blue_alliance, 10), ExchangeTile.new(@red_alliance, 10), PortalTile.new(@blue_alliance, 10)]
         @tiles << [SwitchTile.new(@red_alliance, 10), nil, SwitchTile.new(@red_alliance, 10)]
-        @tiles << [Tile.new(10), Tile.new(10), Tile.new(10)]
+        @tiles << [Tile.new(10, 0), Tile.new(10, 6), Tile.new(10, 0)]
         @tiles << [ScaleTile.new(10), nil, ScaleTile.new(10)]
-        @tiles << [Tile.new(10), Tile.new(10), Tile.new(10)]
+        @tiles << [Tile.new(10, 0), Tile.new(10, 6), Tile.new(10, 0)]
         @tiles << [SwitchTile.new(@blue_alliance, 10), nil, SwitchTile.new(@blue_alliance, 10)]
         @tiles << [PortalTile.new(@red_alliance, 10), ExchangeTile.new(@blue_alliance, 10), PortalTile.new(@red_alliance, 10)]
     end

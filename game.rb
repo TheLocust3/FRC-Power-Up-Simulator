@@ -1,9 +1,8 @@
 require_relative 'robot'
 require_relative 'alliance'
 require_relative 'map'
-require_relative 'tickable'
 
-class Game < Tickable
+class Game
 
     def initialize(blue_ai, red_ai)
         initialize_alliances(blue_ai, red_ai)
@@ -26,7 +25,15 @@ class Game < Tickable
         @red_alliance = Alliance.new('RED', red_robots)
     end
 
-    def tick
+    def run_round
         @map.tick
+
+        for robot in @blue_alliance.robots
+            robot.ai.take_turn
+        end
+
+        for robot in @red_alliance.robots
+            robot.ai.take_turn
+        end
     end
 end

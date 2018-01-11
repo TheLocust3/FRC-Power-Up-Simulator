@@ -5,7 +5,7 @@ class ScaleTile < Tile
     attr_reader :scale
 
     def initialize(length)
-        super(length)
+        super(length, 0)
 
         @scale = Scale.new
     end

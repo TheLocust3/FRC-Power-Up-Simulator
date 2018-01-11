@@ -5,7 +5,7 @@ class PortalTile < Tile
     attr_reader :portal
 
     def initialize(alliance, length)
-        super(length)
+        super(length, 0)
 
         @portal = Portal.new(alliance)
     end

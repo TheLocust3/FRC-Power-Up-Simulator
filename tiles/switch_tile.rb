@@ -5,7 +5,7 @@ class SwitchTile < Tile
     attr_reader :switch
 
     def initialize(alliance, length)
-        super(length)
+        super(length, 0)
 
         @switch = Switch.new(alliance)
     end
