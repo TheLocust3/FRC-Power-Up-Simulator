@@ -16,7 +16,7 @@ class Map < Tickable
     end
 
     def initialize_tiles
-        @tiles = [[]]
+        @tiles = []
 
         @tiles << [PortalTile.new(@blue_alliance, 10), ExchangeTile.new(@red_alliance, 10), PortalTile.new(@blue_alliance, 10)]
         @tiles << [SwitchTile.new(@red_alliance, 10), nil, SwitchTile.new(@red_alliance, 10)]
@@ -38,12 +38,12 @@ class Map < Tickable
 
         for robot in @blue_alliance.robots
             robot.tick
-            robot.tile = tiles[robot.current_y][robot.current_x]
+            robot.tile = @tiles[robot.current_y][robot.current_x]
         end
 
         for robot in @red_alliance.robots
             robot.tick
-            robot.tile = tiles[robot.current_y][robot.current_x]
+            robot.tile = @tiles[robot.current_y][robot.current_x]
         end
     end
 end

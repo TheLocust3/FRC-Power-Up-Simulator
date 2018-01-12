@@ -10,6 +10,6 @@ class AI
     end
 
     def take_turn
-        
+        @robot.drive_x(1)        
     end
 end
