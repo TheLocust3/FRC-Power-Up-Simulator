@@ -43,7 +43,7 @@ class Robot < Tickable
             return # can't pickup more than one block
         end
 
-        @has_block = true # TODO: Check for block
+        @has_block = @tile.pickup_block
     end
 
     def tick

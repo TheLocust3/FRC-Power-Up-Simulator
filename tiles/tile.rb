@@ -8,6 +8,15 @@ class Tile < Tickable
         @blocks = blocks
     end
 
+    def pickup_block
+        if blocks < 1
+            return false
+        end
+
+        @blocks -= 1
+        return true
+    end
+
     def compute_crossing_time(speed)
         length / speed
     end
