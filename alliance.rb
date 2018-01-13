@@ -1,5 +1,6 @@
 class Alliance
     attr_reader :color, :robots
+    attr_accessor :score
 
     def initialize(color, robots)
         @color = color

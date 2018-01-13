@@ -14,19 +14,25 @@ class Scale < FieldObject
 
     def add_block(alliance)
         if @alliance.color == 'BLUE'
-            blue_alliance_blocks += 1
+            @blue_alliance_blocks += 1
         else
-            red_alliance_blocks += 1
+            @red_alliance_blocks += 1
         end
     end
 
     def tick
-        if blue_alliance_blocks > red_alliance_blocks
-            is_owned_by_blue = true
-            is_owned_by_red = false
+        if @blue_alliance_blocks > @red_alliance_blocks
+            @is_owned_by_blue = true
+            @is_owned_by_red = false
         else
-            is_owned_by_blue = false
-            is_owned_by_red = true
+            @is_owned_by_blue = false
+            @is_owned_by_red = true
+        end
+
+        if @is_owned_by_blue
+            @blue_alliance_blocks.score += 1
+        elsif @is_owned_by_red
+            @red_alliance_blocks.score += 1
         end
     end
 end

@@ -5,6 +5,8 @@ class Portal < FieldObject
 
     def initialize(alliance)
         super(alliance)
+
+        @blocks = 7
     end
 
     def add_block

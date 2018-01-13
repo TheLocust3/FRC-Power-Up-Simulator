@@ -13,16 +13,20 @@ class Switch < FieldObject
 
     def add_block(alliance)
         if @alliance == alliance
-            alliance_blocks += 1
+            @alliance_blocks += 1
         else
-            non_alliance_blocks += 1
+            @non_alliance_blocks += 1
         end
     end
 
     def tick
-        is_owned_by_alliance = false
+        @is_owned_by_alliance = false
         if alliance_blocks > non_alliance_blocks
-            is_owned_by_alliance = true
+            @is_owned_by_alliance = true
+        end
+
+        if @is_owned_by_alliance
+            @alliance.score += 1
         end
     end
 end
