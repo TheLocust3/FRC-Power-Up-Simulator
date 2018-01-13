@@ -4,8 +4,8 @@ require_relative '../objects/switch'
 class SwitchTile < Tile
     attr_reader :switch
 
-    def initialize(alliance, length)
-        super(length, 0)
+    def initialize(alliance)
+        super(10, 0)
 
         @switch = Switch.new(alliance)
     end

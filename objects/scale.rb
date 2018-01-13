@@ -1,11 +1,14 @@
 require_relative 'field_object'
+require_relative '../game'
 
 class Scale < FieldObject
-    attr_reader :blue_alliance_blocks, :red_alliance_blocks, :is_owned_by_blue, :is_owned_by_red
+    attr_reader :blue_alliance, :red_alliance, :blue_alliance_blocks, :red_alliance_blocks, :is_owned_by_blue, :is_owned_by_red
 
-    def initialize()
+    def initialize(blue_alliance, red_alliance)
         super(nil)
 
+        @blue_alliance = blue_alliance
+        @red_alliance = red_alliance
         @owned_by_blue = false
         @owned_by_red = false
         @blue_alliance_blocks = 0
@@ -24,15 +27,15 @@ class Scale < FieldObject
         if @blue_alliance_blocks > @red_alliance_blocks
             @is_owned_by_blue = true
             @is_owned_by_red = false
-        else
+        elsif @red_alliance_blocks < @blue_alliance_blocks
             @is_owned_by_blue = false
             @is_owned_by_red = true
         end
 
         if @is_owned_by_blue
-            @blue_alliance_blocks.score += 1
+            @blue_alliance.score += Game.get_scale_points
         elsif @is_owned_by_red
-            @red_alliance_blocks.score += 1
+            @red_alliance.score += Game.get_scale_points
         end
     end
 end

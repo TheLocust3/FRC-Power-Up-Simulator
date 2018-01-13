@@ -4,6 +4,7 @@ class Alliance
 
     def initialize(color, robots)
         @color = color
+        @score = 0
 
         setup_robots(robots)
     end

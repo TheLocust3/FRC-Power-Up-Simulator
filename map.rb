@@ -18,13 +18,13 @@ class Map < Tickable
     def initialize_tiles
         @tiles = []
 
-        @tiles << [PortalTile.new(@blue_alliance, 10), ExchangeTile.new(@red_alliance, 10), PortalTile.new(@blue_alliance, 10)]
-        @tiles << [SwitchTile.new(@red_alliance, 10), nil, SwitchTile.new(@red_alliance, 10)]
+        @tiles << [PortalTile.new(@blue_alliance), ExchangeTile.new(@red_alliance), PortalTile.new(@blue_alliance)]
+        @tiles << [SwitchTile.new(@red_alliance), nil, SwitchTile.new(@red_alliance)]
         @tiles << [Tile.new(10, 0), Tile.new(10, 6), Tile.new(10, 0)]
-        @tiles << [ScaleTile.new(10), nil, ScaleTile.new(10)]
+        @tiles << [ScaleTile.new(@blue_alliance, @red_alliance), nil, ScaleTile.new(@blue_alliance, @red_alliance)]
         @tiles << [Tile.new(10, 0), Tile.new(10, 6), Tile.new(10, 0)]
-        @tiles << [SwitchTile.new(@blue_alliance, 10), nil, SwitchTile.new(@blue_alliance, 10)]
-        @tiles << [PortalTile.new(@red_alliance, 10), ExchangeTile.new(@blue_alliance, 10), PortalTile.new(@red_alliance, 10)]
+        @tiles << [SwitchTile.new(@blue_alliance), nil, SwitchTile.new(@blue_alliance)]
+        @tiles << [PortalTile.new(@red_alliance), ExchangeTile.new(@blue_alliance), PortalTile.new(@red_alliance)]
     end
 
     def tick

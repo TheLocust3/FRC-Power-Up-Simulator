@@ -1,4 +1,5 @@
 require_relative 'field_object'
+require_relative '../game'
 
 class Switch < FieldObject
     attr_reader :alliance_blocks, :non_alliance_blocks, :is_owned_by_alliance
@@ -26,7 +27,7 @@ class Switch < FieldObject
         end
 
         if @is_owned_by_alliance
-            @alliance.score += 1
+            @alliance.score += Game.get_switch_points
         end
     end
 end

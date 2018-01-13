@@ -3,6 +3,8 @@ require_relative 'alliance'
 require_relative 'map'
 
 class Game
+    @@switch_points = 1
+    @@scale_points = 1
 
     def initialize(blue_ai, red_ai)
         initialize_alliances(blue_ai, red_ai)
@@ -23,6 +25,14 @@ class Game
 
         @blue_alliance = Alliance.new('BLUE', blue_robots)
         @red_alliance = Alliance.new('RED', red_robots)
+    end
+
+    def self.get_scale_points
+        @@scale_points
+    end
+
+    def self.get_switch_points
+        @@switch_points
     end
 
     def run_round
