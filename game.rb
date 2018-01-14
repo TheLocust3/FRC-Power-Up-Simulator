@@ -35,6 +35,17 @@ class Game
         @@switch_points
     end
 
+    def run_game
+        @@switch_points = 2
+        @@scale_points = 2
+        (0..14).each { |time| run_round }
+
+        @@switch_points = 1
+        @@scale_points = 1
+        (15..150).each { |time| run_round }
+    end
+
+    private
     def run_round
         @map.tick
 
