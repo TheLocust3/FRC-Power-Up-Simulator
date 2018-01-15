@@ -3,6 +3,7 @@ require_relative 'tiles/portal_tile'
 require_relative 'tiles/exchange_tile'
 require_relative 'tiles/switch_tile'
 require_relative 'tiles/scale_tile'
+require_relative 'tiles/platform_tile'
 require_relative 'tickable'
 
 class Map < Tickable
@@ -21,9 +22,9 @@ class Map < Tickable
 
         @tiles << [PortalTile.new(@blue_alliance, 5), ExchangeTile.new(@red_alliance), PortalTile.new(@blue_alliance, 6)]
         @tiles << [SwitchTile.new(@red_alliance), nil, SwitchTile.new(@red_alliance)]
-        @tiles << [Tile.new(10, 0), Tile.new(10, 6), Tile.new(10, 0)]
+        @tiles << [Tile.new(10, 0), PlatformTile.new(@red_alliance), Tile.new(10, 0)]
         @tiles << [ScaleTile.new(@blue_alliance, @red_alliance), nil, ScaleTile.new(@blue_alliance, @red_alliance)]
-        @tiles << [Tile.new(10, 0), Tile.new(10, 6), Tile.new(10, 0)]
+        @tiles << [Tile.new(10, 0), PlatformTile.new(@blue_alliance), Tile.new(10, 0)]
         @tiles << [SwitchTile.new(@blue_alliance), nil, SwitchTile.new(@blue_alliance)]
         @tiles << [PortalTile.new(@red_alliance, 6), ExchangeTile.new(@blue_alliance), PortalTile.new(@red_alliance, 5)]
     end
