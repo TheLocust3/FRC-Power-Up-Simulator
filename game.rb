@@ -15,11 +15,13 @@ class Game
     def initialize_alliances(blue_ai, red_ai)
         blue_robots = []
         for ai in blue_ai
+            ai.attach_map(@map)
             blue_robots << Robot.new(ai, 10, 0, 0) # TODO: assign position better
         end
 
         red_robots = []
         for ai in red_ai
+            ai.attach_map(@map)
             red_robots << Robot.new(ai, 10, 0, 0)
         end
 
