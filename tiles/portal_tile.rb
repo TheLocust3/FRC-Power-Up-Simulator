@@ -4,8 +4,8 @@ require_relative '../objects/portal'
 class PortalTile < Tile
     attr_reader :portal
 
-    def initialize(alliance)
-        super(10, 0)
+    def initialize(alliance, blocks)
+        super(10, blocks)
 
         @portal = Portal.new(alliance)
     end

@@ -7,7 +7,7 @@ class Robot < Tickable
     def initialize(ai, speed, x, y)
         @ai = ai
         @speed = speed
-        @has_block = false
+        @has_block = true
         @current_x = x
         @future_x = x
         @current_y = y
